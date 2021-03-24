@@ -9,7 +9,7 @@ struct Node
 
 struct Stack
 {
-    Node *pHead;
+    Node *pHead = n;
 
     void Push(int item)
     {
@@ -42,7 +42,7 @@ struct Stack
     void printAll()
     {
         for (Node *temp = pHead; temp; temp = temp->next)
-            cout << temp->item << " ";
+            {cout << temp->item << " ";}
         cout << endl;
     }
 };
