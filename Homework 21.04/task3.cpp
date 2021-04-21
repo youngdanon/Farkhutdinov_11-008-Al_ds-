@@ -21,12 +21,11 @@ int BinSearch(int *M, int n, int k)
         if (k == M[m])
             break;
         if (R - L <= 1)
-        {
             break;
-        }
     }
-
-    return m;
+    if ((k - M[L]) < (M[R] - k))
+        return L;
+    return R;
 }
 
 int main()
