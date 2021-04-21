@@ -32,27 +32,27 @@ void print_v(vector<int> v)
 
 int main()
 {
+    int n, m;
+    int x;
 
-    vector<int> inp_mas;
-    int n;
-    string raw_mas;
-    cin >> raw_mas;
-    cin >> n;
-    for (int i = 0; i < raw_mas.size(); i++)
+    cin >> n >> m;
+    vector<int> inp;
+    int num;
+    for (int i = 0; i < n * m; i++)
     {
-        inp_mas.push_back((int)raw_mas[i] - 48);
+        cin >> num;
+        inp.push_back(num);
     }
-    // print_v(inp_mas);
-    print_v(inp_mas);
-    int first_ind = binarySearch(inp_mas, 0, inp_mas.size(), n, false);
-    int last_ind = binarySearch(inp_mas, 0, inp_mas.size(), n, true);
-    if (first_ind > inp_mas.size() - 1)
+
+    cin >> x;
+
+    int index = binarySearch(inp, 0, n * m, x, false);
+    if (index > inp.size() - 1)
     {
-        cout << "Number is not founded" << endl;
+        cout << "Number not found" << endl;
     }
     else
     {
-        cout << "Fisrt founded: " << first_ind << endl;
-        cout << "Last founded: " << last_ind << endl;
+        cout << "Number founded" << endl;
     }
 }
